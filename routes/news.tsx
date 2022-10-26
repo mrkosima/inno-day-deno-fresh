@@ -36,7 +36,7 @@ export const handler: Handlers = {
     }
     const storiesIds: number[] = await resp.json();
     const stories: TopStories = await Promise.all(
-      storiesIds.slice(0, 3).map(id => fetchItem(id).then(res => res.json()))
+      storiesIds.map(id => fetchItem(id).then(res => res.json()))
     )
     return ctx.render(stories);
   },
@@ -58,7 +58,7 @@ export default function News({ data }: PageProps<TopStories | null>) {
           <h1 className="text-2xl my-4">Fresh Hacker News</h1>
           <ul>
             {data.map(({ id, by, descendants, score, time, url, title }) =>
-              <li className="bg-gray-100 hover:bg-yellow-100 transition-colors duration-300 box-border border-dashed border-b-1 border-gray-300">
+              <li className="bg-gray-100 hover:bg-yellow-300 transition-colors box-border border-dashed border-b-1 border-gray-300">
                 <StoryItem id={id} descendants={descendants} url={url} title={title} score={score} time={time} by={by} />
               </li>
             )}
