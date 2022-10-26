@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import StoryItem from '../../components/StoryItem.tsx';
+import StoryItem from '../components/StoryItem.tsx';
 
 const API_PREFIX = "https://hacker-news.firebaseio.com/v0/";
 
