@@ -15,8 +15,8 @@ export default function Home() {
             <span className="text-gray-300"> (API)</span>
           </p>
           <p><a href="/news">Fresh News</a> <span className="text-gray-300"> (SSR + fetch)</span></p>
-          <p><a href="/github">Github</a> <span className="text-gray-300"> (Router)</span></p>
           <p><a href="/game">Game</a> <span className="text-gray-300">  (Form)</span></p>
+          <p><a href="/github">Github</a> <span className="text-gray-300"> (Router)</span></p>
           <p><a href="/counter">Counter</a> <span className="text-gray-300"> (CSR Island)</span></p>
         </div>
       </div>
