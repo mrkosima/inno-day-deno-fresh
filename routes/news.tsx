@@ -45,7 +45,7 @@ export const handler: Handlers = {
 export default function News({ data }: PageProps<TopStories | null>) {
   if (!data) {
     return (
-      <h1>User failed to load</h1>
+      <h1>News failed to load</h1>
     )
   }
   return (
