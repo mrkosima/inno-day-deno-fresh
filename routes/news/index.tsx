@@ -53,15 +53,17 @@ export default function News({ data }: PageProps<TopStories | null>) {
       <Head>
         <title>Xebia InnoDay - Fresh Hacker News</title>
       </Head>
-      <div className="container mx-auto font-mono antialiased" >
-        <h1 className="text-2xl my-4">Fresh Hacker News</h1>
-        <ul>
-          {data.map(({ id, by, descendants, score, time, url, title }) =>
-            <li className="bg-gray-100 hover:bg-yellow-100 transition-colors duration-300 box-border border-dashed border-b-1 border-gray-300">
-              <StoryItem id={id} descendants={descendants} url={url} title={title} score={score} time={time} by={by} />
-            </li>
-          )}
-        </ul>
+      <div className="container font-mono antialiased" >
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-2xl my-4">Fresh Hacker News</h1>
+          <ul>
+            {data.map(({ id, by, descendants, score, time, url, title }) =>
+              <li className="bg-gray-100 hover:bg-yellow-100 transition-colors duration-300 box-border border-dashed border-b-1 border-gray-300">
+                <StoryItem id={id} descendants={descendants} url={url} title={title} score={score} time={time} by={by} />
+              </li>
+            )}
+          </ul>
+        </div>
       </div>
     </>
   );
