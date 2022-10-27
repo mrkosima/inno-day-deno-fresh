@@ -68,13 +68,6 @@ export default function Game({ data }: PageProps<Data>) {
       </Wrapper>
     )
   }
-  if (success) {
-    return (
-      <Wrapper answer={answer} length={length}>
-        <div className="bg-green-100 text-green-900 text-center p-8 rounded">Congrats, <span className="font-bold">"{answer}"</span> is the word I riddled!</div>
-      </Wrapper>
-    )
-  }
   return (
     <Wrapper answer={answer} length={length}>
       {matches?.length > 0 && (
@@ -90,6 +83,9 @@ export default function Game({ data }: PageProps<Data>) {
             return <div className={`p-4 ${bg} rounded text-white`}>{answer[i]}</div>
           })}
         </div>
+      )}
+      {success && (
+        <div className="bg-green-100 text-green-900 text-center p-8 rounded mt-4">Congrats, <span className="font-bold">"{answer}"</span> is the word I riddled!</div>
       )}
 
     </Wrapper>
