@@ -77,7 +77,7 @@ export default function Game({ data }: PageProps<Data>) {
   }
   return (
     <Wrapper answer={answer} length={length}>
-      {matches?.length && (
+      {matches?.length > 0 && (
         <div className="flex gap-1 mt-12 justify-center">
           {matches.map((match, i) => {
             let bg = "bg-gray-500";
