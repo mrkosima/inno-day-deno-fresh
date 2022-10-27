@@ -23,7 +23,7 @@ export const handler: Handlers<Data> = {
 export default function Game({ data }: PageProps<Data>) {
   const { username } = data;
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <div className="font-mono max-w-sm mx-auto">
         <h1 className="text-2xl my-4">Enter your github username</h1>
         <form className="mb-4">

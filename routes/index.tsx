@@ -6,7 +6,7 @@ export default function Home() {
       <Head>
         <title>Xebia InnoDay</title>
       </Head>
-      <div className="container">
+      <div className="container mx-auto">
         <div className="mt-12 font-mono max-w-sm mx-auto flex flex-col">
           <p className="mb-8 font-bold text-xl">Deno Fresh - Inno Day</p>
           <p>

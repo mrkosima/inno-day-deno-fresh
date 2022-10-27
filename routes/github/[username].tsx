@@ -61,8 +61,8 @@ export default function NewsById(props: PageProps<Data | null>) {
   const userId = params['username'];
   if (!data) {
     return (
-      <div className="container font-mono antialiased">
-        <div className="max-w-lg mx-auto flex items-center shadow-lg mt-12">
+      <div className="container font-mono antialiased mx-auto">
+        <div className="max-w-lg mx-auto flex items-center shadow-lg mt-12 mx-auto">
           <h1 className="m-8">User {userId} was not found</h1>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default function NewsById(props: PageProps<Data | null>) {
 
   const { avatar_url, location, name, public_repos, login } = data;
   return (
-    <div className="container font-mono antialiased">
+    <div className="container font-mono antialiased mx-auto">
       <div className="max-w-xl mx-auto flex items-center shadow-lg mt-12">
         <img src={`${avatar_url}`}
           alt={name}

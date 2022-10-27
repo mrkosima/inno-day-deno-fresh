@@ -53,7 +53,7 @@ export default function News({ data }: PageProps<TopStories | null>) {
       <Head>
         <title>Xebia InnoDay - Fresh Hacker News</title>
       </Head>
-      <div className="container font-mono antialiased" >
+      <div className="container font-mono antialiased mx-auto" >
         <div className="max-w-3xl mx-auto">
           <h1 className="text-2xl my-4">Fresh Hacker News</h1>
           <ul>

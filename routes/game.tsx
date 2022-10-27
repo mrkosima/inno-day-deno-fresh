@@ -40,7 +40,7 @@ export const handler: Handlers<Data> = {
 };
 
 const Wrapper: FunctionComponent<{ answer: string, length: number }> = ({ children, answer, length }) => (
-  <div className="container">
+  <div className="container mx-auto">
     <div className="font-mono max-w-sm mx-auto">
       <h1 className="text-2xl my-4">Game: guess the word of the day which has <span className="text-red-900">{length}</span> characters</h1>
       <form className="mb-4">
