@@ -85,7 +85,7 @@ export default function Game({ data }: PageProps<Data>) {
         </div>
       )}
       {success && (
-        <div className="bg-green-100 text-green-900 text-center p-8 rounded mt-4">Congrats, <span className="font-bold">"{answer}"</span> is the word I riddled!</div>
+        <div className="bg-green-100 text-green-900 text-center p-8 rounded mt-4">Congrats, <span className="font-bold">"{answer}"</span> is the riddled word!</div>
       )}
 
     </Wrapper>
