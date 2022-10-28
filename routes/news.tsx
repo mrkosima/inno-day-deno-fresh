@@ -1,6 +1,8 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import StoryItem from '../components/StoryItem.tsx';
+import Container from '../components/Container.tsx';
+
 
 const API_PREFIX = "https://hacker-news.firebaseio.com/v0/";
 
@@ -53,18 +55,16 @@ export default function News({ data }: PageProps<TopStories | null>) {
       <Head>
         <title>Xebia InnoDay - Fresh Hacker News</title>
       </Head>
-      <div className="container font-mono antialiased mx-auto" >
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-2xl my-4">Fresh Hacker News</h1>
-          <ul>
-            {data.map(({ id, by, descendants, score, time, url, title }) =>
-              <li className="bg-gray-100 hover:bg-yellow-300 transition-colors box-border border-dashed border-b-1 border-gray-300">
-                <StoryItem id={id} descendants={descendants} url={url} title={title} score={score} time={time} by={by} />
-              </li>
-            )}
-          </ul>
-        </div>
-      </div>
+      <Container>
+        <h1 className="text-2xl my-4">Fresh Hacker News</h1>
+        <ul>
+          {data.map(({ id, by, descendants, score, time, url, title }) =>
+            <li className="bg-gray-100 hover:bg-yellow-300 transition-colors box-border border-dashed border-b-1 border-gray-300">
+              <StoryItem id={id} descendants={descendants} url={url} title={title} score={score} time={time} by={by} />
+            </li>
+          )}
+        </ul>
+      </Container>
     </>
   );
 }
