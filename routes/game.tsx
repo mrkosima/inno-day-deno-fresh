@@ -1,6 +1,8 @@
+import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import type { FunctionComponent } from 'preact';
 import Container from '../components/Container.tsx';
+import GA4 from "../components/GA4.tsx";
 
 type Data = {
   answer: string;
@@ -41,21 +43,28 @@ export const handler: Handlers<Data> = {
 };
 
 const Wrapper: FunctionComponent<{ answer: string, length: number }> = ({ children, answer, length }) => (
-  <Container>
-    <h1 className="text-2xl my-4">Game: guess the word of the day which has <span className="text-red-900">{length}</span> characters</h1>
-    <form className="mb-4">
-      <input
-        type="text"
-        name="answer"
-        className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5"
-        value={answer} />
-      <button
-        type="submit"
-        className="text-gray-100 rounded bg-green-500 hover:bg-green-400 focus:outline-none rounded-sm font-medium text-sm w-full px-5 py-2.5 text-center"
-      >Submit</button>
-    </form>
-    {children}
-  </Container>
+  <>
+    <Head>
+      <title>Xebia InnoDay</title>
+      <GA4 />
+    </Head>
+    <Container>
+      <h1 className="text-2xl my-4">Game: guess the word of the day which has <span className="text-red-900">{length}</span> characters</h1>
+      <form className="mb-4">
+        <input
+          type="text"
+          name="answer"
+          className="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5"
+          value={answer} />
+        <button
+          type="submit"
+          className="text-gray-100 rounded bg-green-500 hover:bg-green-400 focus:outline-none rounded-sm font-medium text-sm w-full px-5 py-2.5 text-center"
+        >Submit</button>
+      </form>
+      {children}
+    </Container>
+  </>
+
 )
 
 export default function Game({ data }: PageProps<Data>) {

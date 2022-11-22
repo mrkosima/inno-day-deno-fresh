@@ -2,7 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import StoryItem from '../components/StoryItem.tsx';
 import Container from '../components/Container.tsx';
-
+import GA4 from "../components/GA4.tsx";
 
 const API_PREFIX = "https://hacker-news.firebaseio.com/v0/";
 
@@ -54,6 +54,7 @@ export default function News({ data }: PageProps<TopStories | null>) {
     <>
       <Head>
         <title>Xebia InnoDay - Fresh Hacker News</title>
+        <GA4 />
       </Head>
       <Container>
         <h1 className="text-2xl my-4">Fresh Hacker News</h1>
