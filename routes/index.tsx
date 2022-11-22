@@ -12,7 +12,7 @@ export default function Home() {
       <Container>
         <p className="mb-8 font-bold text-xl">Deno Fresh - Inno Day</p>
         <p>
-          <a href="/joke">Best joke</a>
+          <a href="/api/joke">Best joke</a>
           <span className="text-gray-300"> (API)</span>
         </p>
         <p><a href="/news">Fresh News</a> <span className="text-gray-300"> (SSR + fetch)</span></p>
